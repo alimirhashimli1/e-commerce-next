@@ -28,9 +28,9 @@ const Product = ({_id, name, price, description, picture}) => {
   }
   
   return (
-    <div className="w-64">
-    <div className='bg-cyan-50 p-5 rounded-xl'>
-    <img className='' src={picture} alt={name} />
+    <div className="w-64 h-45">
+    <div className='bg-cyan-50 p-5 rounded-xl w-full'>
+    <img className='w-full max-h-42' src={picture} alt={name} />
     </div>
     <div className='mt-2'>
       <h3 className='font-bold text-lg'>{name}</h3>
