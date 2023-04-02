@@ -1,5 +1,5 @@
 import { set } from "mongoose"
-// import { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useContext } from "react"
 import Layout from "../components/Layout"
 import { ProductsContext } from "../components/ProductsContext"
