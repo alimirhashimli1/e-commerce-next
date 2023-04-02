@@ -1,11 +1,11 @@
 import { set } from "mongoose"
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 import { useContext } from "react"
 import Layout from "../components/Layout"
 import { ProductsContext } from "../components/ProductsContext"
 
 const CheckoutPage = () => {
-  const {selectedProducts, setSelectedProducts}= useContext(ProductsContext)
+const {selectedProducts, setSelectedProducts}= useContext(ProductsContext)
   const [productsInfos, setProductsInfos] = useState([]);
   const [address, setAddress] = useState("")
   const [city, setCity] = useState("")

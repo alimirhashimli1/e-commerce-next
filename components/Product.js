@@ -6,7 +6,7 @@ import { ProductsContext } from "./ProductsContext"
 
 const Product = ({_id, name, price, description, picture}) => {
   const {setSelectedProducts}  = useContext(ProductsContext);
-  const [buttonColor, setButtonColor] = useState();
+  const [buttonColor, setButtonColor] = useState("bg-orange-400");
   const [buttonText, setButtonText] = useState("Add to basket")
 
   const changeButtonColor = (useCallback(() => {
@@ -38,7 +38,7 @@ const Product = ({_id, name, price, description, picture}) => {
     <p className='text-sm mt-2 leading-4 text-gray-500'>{description}</p>
     <div className='flex mt-1'>
       <div className='text-2xl font-bold grow'>€{price}</div>
-      <button onClick={() => {addProduct(); changeButtonColor()}}  className={`${buttonColor} bg-orange-400 bg-gree text-white w-32  py-1 px-3 rounded-xl`}>{buttonText}</button>
+      <button onClick={() => {addProduct(); changeButtonColor()}}  className={`${buttonColor}  text-white w-32  py-1 px-3 rounded-xl`}>{buttonText}</button>
     </div>
   </div>
   )
