@@ -14,6 +14,9 @@ export default async function handler(req, res) {
     }
 
     const {email, name, address, city} = req.body;
+    if(!email || !name || !address || !city) {
+      return res.status(400).send("Please fill in all required fields.")
+    }
     const productsIds = req.body.products.split(",");
     const uniqueIds = [...new Set(productsIds)];
     const products = await Product.find({_id:{$in:uniqueIds}}).exec();
@@ -41,6 +44,7 @@ export default async function handler(req, res) {
         city,
         paid: 0
       }
+    
     )
     
     const session = await stripe.checkout.sessions.create({

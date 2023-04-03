@@ -24,6 +24,18 @@ const {selectedProducts, setSelectedProducts}= useContext(ProductsContext)
     setSelectedProducts(prev => [...prev, id])
   } 
 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name && email && city && address) {
+      // submit form
+      console.log('Form submitted!');
+    } else {
+      // show error message
+      console.log('Please fill in all fields!');
+    }
+  };
+
   function lessOfThisProduct (id){
     const pos = selectedProducts.indexOf(id);
     if(pos !== -1) {
@@ -79,7 +91,7 @@ const {selectedProducts, setSelectedProducts}= useContext(ProductsContext)
             </div>
           )})
         }
-          <form action="/api/checkout" method="POST">
+          <form action="/api/checkout" method="POST" onSubmit={handleSubmit}>
 
         <div className="mt-4">
           <input required name="address" value={address} onChange={e => setAddress(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Street, address, number"/>
